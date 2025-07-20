@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporkan Cyberbullying | AMANIN</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AMANIN</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="lapor.html">Laporkan</a></li>
+                    <li><a href="bantuan.html">Bantuan</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="report-form" class="container">
+            <h2>Laporkan Cyberbullying</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1em;">Mohon isi formulir di bawah ini dengan detail insiden. Informasi Anda akan dijaga kerahasiaannya.</p>
+
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+                <div class="form-group">
+                    <label>Apakah Anda ingin melaporkan secara anonim?</label>
+                    <div>
+                        <input type="radio" id="anon_yes" name="anonymous" value="true" checked>
+                        <label for="anon_yes">Ya, Anonim</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="anon_no" name="anonymous" value="false">
+                        <label for="anon_no">Tidak, Dengan Identitas</label>
+                    </div>
+                </div>
+
+                <div id="reporter-info-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="nama_lengkap">Nama Lengkap:</label>
+                        <input type="text" id="nama_lengkap" name="nama_lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="email_pelapor">Email:</label>
+                        <input type="email" id="email_pelapor" name="email_pelapor">
+                    </div>
+                    <div class="form-group">
+                        <label for="nomor_telepon">Nomor Telepon (Opsional):</label>
+                        <input type="tel" id="nomor_telepon" name="nomor_telepon">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="jenis_bully">Jenis Cyberbullying:</label>
+                    <select id="jenis_bully" name="jenis_bully" required>
+                        <option value="">Pilih Jenis</option>
+                        <option value="pelecehan_verbal">Pelecehan Verbal / Kata-kata Menyakitkan</option>
+                        <option value="penyebaran_rumor">Penyebaran Rumor / Gosip</option>
+                        <option value="pemerasan_ancaman">Pemerasan / Ancaman</option>
+                        <option value="pencurian_identitas">Pencurian Identitas / Impersonasi</option>
+                        <option value="doxing">Doxing (Penyebaran Informasi Pribadi)</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Platform Terjadi Insiden:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="platform_ig" name="platform[]" value="Instagram"> <label for="platform_ig">Instagram</label>
+                        <input type="checkbox" id="platform_tiktok" name="platform[]" value="TikTok"> <label for="platform_tiktok">TikTok</label>
+                        <input type="checkbox" id="platform_wa" name="platform[]" value="WhatsApp"> <label for="platform_wa">WhatsApp</label>
+                        <input type="checkbox" id="platform_fb" name="platform[]" value="Facebook"> <label for="platform_fb">Facebook</label>
+                        <input type="checkbox" id="platform_x" name="platform[]" value="X (Twitter)"> <label for="platform_x">X (Twitter)</label>
+                        <input type="checkbox" id="platform_youtube" name="platform[]" value="YouTube"> <label for="platform_youtube">YouTube</label>
+                        <input type="checkbox" id="platform_email" name="platform[]" value="Email"> <label for="platform_email">Email</label>
+                        <input type="checkbox" id="platform_game" name="platform[]" value="Game Online"> <label for="platform_game">Game Online</label>
+                        <input type="checkbox" id="platform_lainnya" name="platform[]" value="Lainnya"> <label for="platform_lainnya">Lainnya</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tanggal_insiden">Tanggal Insiden:</label>
+                    <input type="date" id="tanggal_insiden" name="tanggal_insiden" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="waktu_insiden">Waktu Insiden:</label>
+                    <input type="time" id="waktu_insiden" name="waktu_insiden">
+                </div>
+
+                <div class="form-group">
+                    <label for="pelaku_id">Nama Akun / ID Pelaku (Jika Diketahui):</label>
+                    <input type="text" id="pelaku_id" name="pelaku_id">
+                </div>
+
+                <div class="form-group">
+                    <label for="bukti_url">URL / Tautan ke Bukti Insiden:</label>
+                    <input type="url" id="bukti_url" name="bukti_url" placeholder="https://contoh.com/post_pelaku">
+                </div>
+
+                <div class="form-group">
+                    <label for="deskripsi_insiden">Deskripsi Detil Insiden:</label>
+                    <textarea id="deskripsi_insiden" name="deskripsi_insiden" rows="8" required></textarea>
+                    <small>Jelaskan apa yang terjadi, bagaimana hal itu memengaruhi Anda, dan kapan pertama kali dimulai. Sertakan detail penting yang relevan.</small>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agree_privacy" name="agree_privacy" required>
+                    <label for="agree_privacy">Saya menyetujui <a href="tentang.html#privacy">Kebijakan Privasi</a> dan menyadari bahwa informasi ini akan digunakan untuk proses penanganan laporan.</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kirim Laporan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AMANIN. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="public/js/script.js"></script>
+</body>
+</html>
